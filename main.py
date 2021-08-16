@@ -50,3 +50,4 @@ if __name__ == '__main__':
 #Juani Campeon
 #Queremos que esta sea la versión definitiva
 #pushear
+# todos queremos una valvula tricuspide
