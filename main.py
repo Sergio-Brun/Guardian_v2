@@ -27,11 +27,11 @@ class regression(unittest.TestCase):
         self.dtc.click_create_unique_id()
         self.dtc.enter_case_state('AZ')
         self.dtc.click_load_igo()
-        print('juani gato')
+        time.sleep(30)
+        print('proyecto del ojete')
+        self.case_setup.set_state('Arizona')
         self.case_setup.enter_dob('01/03/1991')
-        time.sleep(10)
-        self.case_setup.set_owner_applicant_no()
-        self.case_setup.set_owner_type('Individual')
+
         time.sleep(10)
 
 
