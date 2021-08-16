@@ -44,5 +44,3 @@ class regression(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-#juani gato v2
-# los tricuspides se la comen
