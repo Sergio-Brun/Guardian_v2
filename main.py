@@ -44,9 +44,4 @@ class regression(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-#juani gato
-
-#Esta es la rama del Juani
-#Juani Campeon
-#Queremos que esta sea la versión definitiva
-#pushear
+#hola
