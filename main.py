@@ -44,8 +44,4 @@ class regression(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-<<<<<<< HEAD
-#rama juaniiii
-=======
-#hola
->>>>>>> b72d25da19716b1155f7900f80417863a2e1fa67
+#Ultima version desde rama Master
