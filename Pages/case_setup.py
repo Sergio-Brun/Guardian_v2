@@ -10,11 +10,14 @@ class case_setup():
         self.sign_state = (By.XPATH, '(//input[@name="Applicant_SignState"])[2]')
         self.resident_state = (By.XPATH,'(//input[@name="Situs_ResidenceState"])[2]')
         self.service_agent_yes_button = (By.XPATH, '(//input[@name="CS_AGENT_IsServicingAgent"])[1]')
-        self.validate_agent_button = (By.XPATH, '(//button[@class = "field field-button btn-block btn-default runtime-btn btn btn-primary"])[1]')
+        #self.validate_agent_button = (By.XPATH, '(//button[@class = "field field-button btn-block btn-default runtime-btn btn btn-primary"])[1]')
+        self.validate_agent_button = (By.XPATH, '(//div[@class= "field-main-container field-main-container_button"])[1]')
         self.agent_email_address = (By.NAME, 'CS_AGENT_Email')
         self.disability_income_no = (By.XPATH, '(//input[@name = "CS_AGENT_DisabilityIncome"])[2]')
         self.premium_financing_no = (By.XPATH, '(//input[@name = "CS_AGENT_Financing"])[2]')
         self.agent_english_no = (By.XPATH, '(//input[@name = "CS_AGENT_English"])[2]')
+        self.next_button = (By.XPATH, '(//button[@class = "field field-button btn-block btn-default runtime-btn btn btn-primary"])[3]')
+
 
     def enter_dob(self, dob):
         self.driver.find_element(*self.dob).clear()
@@ -52,4 +55,6 @@ class case_setup():
     def set_agent_english_no(self):
         self.driver.find_element(*self.agent_english_no).click()
 
+    def click_next_button(self):
+        self.driver.find_element(*self.next_button).click()
 
