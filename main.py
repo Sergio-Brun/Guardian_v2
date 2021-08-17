@@ -28,12 +28,17 @@ class regression(unittest.TestCase):
         self.dtc.enter_case_state('AZ')
         self.dtc.click_load_igo()
         time.sleep(30)
-        print('proyecto del ojete')
-        self.case_setup.set_state('Arizona')
+        self.case_setup.set_sign_state('Arizona')
+        self.case_setup.set_res_state('Arizona')
         self.case_setup.enter_dob('01/03/1991')
-
+        self.case_setup.set_service_agent_yes()
+        self.case_setup.set_email_address('juani_gato@gmail.com')
+        self.case_setup.validate_agent()
         time.sleep(10)
-
+        self.case_setup.set_disability_no()
+        self.case_setup.set_premium_financing_no()
+        self.case_setup.set_agent_english_no()
+        time.sleep(10)
 
 
     def tearDown(self):
