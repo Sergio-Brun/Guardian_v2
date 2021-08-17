@@ -4,6 +4,8 @@ from selenium.webdriver.chrome.options import Options
 from Pages.get_token import token
 from Pages.dtc import dtc
 from Pages.case_setup import case_setup
+from Pages.invite_client_to_data_entry import invite_client_to_data_entry
+from Pages.proposed_insured import pi
 import time
 
 class regression(unittest.TestCase):
@@ -12,12 +14,15 @@ class regression(unittest.TestCase):
         options = Options()
         options.add_argument('--start-maximized')
         options.add_argument('incognito')
+        options.add_experimental_option("detach", True)
         self.driver = webdriver.Chrome('chromedriver.exe', options= options)
         self.driver.implicitly_wait(5)
         self.driver.get('https://ipipeline.github.io/DTCCarrierTest/210115_Guardian_SDK_POC/GuardianIntermediaryLifeQA5.html')
         self.token = token()
         self.dtc = dtc(self.driver)
         self.case_setup = case_setup(self.driver)
+        self.invite = invite_client_to_data_entry(self.driver)
+        self.pi = pi(self.driver)
 
     def test_prueba(self):
         a = self.token.get_token()
@@ -41,14 +46,16 @@ class regression(unittest.TestCase):
         self.case_setup.set_premium_financing_no()
         self.case_setup.set_agent_english_no()
         self.case_setup.click_next_button()
-        time.sleep(30)
+        self.invite.click_next()
+        self.pi.set_pi_name('pancha')
 
 
+'''
     def tearDown(self):
 
         self.driver.close()
         self.driver.quit()
-
+'''
 if __name__ == '__main__':
     unittest.main()
 
