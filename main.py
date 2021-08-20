@@ -43,9 +43,9 @@ class regression(unittest.TestCase):
         self.case_setup.set_aget_writting_code()
         time.sleep(2)
         self.case_setup.validate_agent()
-        time.sleep(4)
+        time.sleep(6)
         self.case_setup.validate_agent()
-        time.sleep(4)
+        time.sleep(6)
         self.case_setup.set_military_inst_no()
         self.case_setup.set_disability_no()
         self.case_setup.set_premium_financing_no()
@@ -56,6 +56,20 @@ class regression(unittest.TestCase):
         self.menu.go_to_proposed_insured()
         #self.invite.click_next()
         self.pi.set_pi_name('pancha')
+        self.pi.set_pi_last_name('brun')
+        self.pi.set_change_name_no()
+        self.pi.set_street_addres('figueroa alcorta')
+        self.pi.set_city('gc')
+        #self.pi.set_zip('90210')
+        #self.pi.set_state('Arizona')
+        self.pi.set_years_in_address('3')
+        self.pi.set_mailing_same_as_residence_yes()
+        self.pi.set_phone_number('9876549875')
+        self.pi.set_email('jnaman@totalperform.com')
+        self.pi.set_place_of_birth('USA')
+        self.pi.set_citizen_usa_yes()
+        self.pi.set_drivers_license_yes()
+
 
 
 '''
