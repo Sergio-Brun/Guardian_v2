@@ -13,11 +13,20 @@ class case_setup():
         #self.validate_agent_button = (By.XPATH, '(//button[@class = "field field-button btn-block btn-default runtime-btn btn btn-primary"])[1]')
         self.validate_agent_button = (By.XPATH, '(//div[@class= "field-main-container field-main-container_button"])[1]')
         self.agent_email_address = (By.NAME, 'CS_AGENT_Email')
+        self.military_installation_no = (By.NAME, 'Solicitation_Military')
         self.disability_income_no = (By.XPATH, '(//input[@name = "CS_AGENT_DisabilityIncome"])[2]')
         self.premium_financing_no = (By.XPATH, '(//input[@name = "CS_AGENT_Financing"])[2]')
         self.agent_english_no = (By.XPATH, '(//input[@name = "CS_AGENT_English"])[2]')
         self.next_button = (By.XPATH, '(//button[@class = "field field-button btn-block btn-default runtime-btn btn btn-primary"])[3]')
+        self.agent_writting_code = (By.XPATH, '(//input[@class = "formotiv-exclude"])[3]')
 
+    def set_military_inst_no(self):
+        self.driver.find_element(*self.military_installation_no).click()
+
+    def set_aget_writting_code(self):
+        self.driver.find_element(*self.agent_writting_code).send_keys('0')
+        self.driver.find_element(*self.agent_writting_code).send_keys(Keys.DOWN)
+        self.driver.find_element(*self.agent_writting_code).send_keys(Keys.RETURN)
 
     def enter_dob(self, dob):
         self.driver.find_element(*self.dob).clear()
